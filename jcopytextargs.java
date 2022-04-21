@@ -16,7 +16,7 @@ public class jcopytextargs {
         
         if(args.length!=0){
             
-                acopiar=args[0];
+            acopiar=args[0];
 
             if(args.length==2){
                 copia=args[1];
