@@ -14,23 +14,32 @@ public class jwcargs {
         int caracteres=0;
         int lineas=0;
         
-        System.out.println("Introduce la ruta del archivo: ");
-        String ruta=teclado.next();
-        
-        try(BufferedReader leerCar=new BufferedReader(new FileReader (ruta));
-                BufferedReader leerLin=new BufferedReader(new FileReader (ruta));){
-            while(leerCar.read()!=-1){
-                caracteres++;
-            }
+        if(args.length==0){
             
-            while(leerLin.readLine()!=null){
-                lineas++;
-            }
-            System.out.println("Total de caracteres: "+caracteres+", Total de lineas: "+lineas);
+            
+            
             
         }
-        catch(IOException e){
-            System.out.println("Error"+e);
+        else{
+        
+            System.out.println("Introduce la ruta del archivo: ");
+            String ruta=teclado.next();
+
+            try(BufferedReader leerCar=new BufferedReader(new FileReader (ruta));
+                    BufferedReader leerLin=new BufferedReader(new FileReader (ruta));){
+                while(leerCar.read()!=-1){
+                    caracteres++;
+                }
+
+                while(leerLin.readLine()!=null){
+                    lineas++;
+                }
+                System.out.println("Total de caracteres: "+caracteres+", Total de lineas: "+lineas);
+
+            }
+            catch(IOException e){
+                System.out.println("Error"+e);
+            }
         }
     }
 
